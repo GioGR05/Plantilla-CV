@@ -1,0 +1,182 @@
+%----------------------------------------------------------------------------------------------------------------------------------------%
+
+% Documento editable disponible en Overleaf.com
+% Copyright (c) 2021 Jitin Nair
+
+%-----------------------------------------------------------------------------------------------------------------------------------------
+%   Estructura del documento
+%-----------------------------------------------------------------------------------------------------------------------------------------
+
+% Se empleará el estilo de plantilla correspondiente a un artículo
+% Papel tamaño A4 y tamaño de letra 11
+\documentclass[a4paper,11pt]{article}
+\let\olditemize\itemize
+\def\itemize{\olditemize\itemsep=0pt }
+
+%-----------------------------------------------------------------------------------------------------------------------------------------
+% Paquetería usada
+%-----------------------------------------------------------------------------------------------------------------------------------------
+
+% Para incluir enlaces
+\usepackage{url}
+% Para controlar del espaciado entre cada párrafo
+\usepackage{parskip} 	
+% Para controlar del espaciado entre listas
+\usepackage{paralist}
+% Paquete de colores
+\RequirePackage{color}
+% Paquete para insertar figuras
+\RequirePackage{graphicx}
+% Si se requiere definir nuevos colores con escala RGB
+\usepackage[usenames,dvipsnames]{xcolor}
+% Para establecer medidas en la colocación de texto
+\usepackage[scale=0.9]{geometry}
+% Usado para tabular en espacios predefinidos
+\usepackage{tabularx}
+% Para listas numeradas (reducir el espacio entre cada elemento)
+\usepackage{enumitem}
+% Auxiliar para tabularx
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+% Para evitar desbordamientos en futuras hojas
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+% Para las diferentes secciones del CV
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+% Las secciones del CV Sections son inspiradas en 
+% http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+% Para que no aparezcan las citas del documento
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+% Paquete usado para la configuración de las referencias, de los 
+% colores empleados y de los enlaces que se lleguen a colocar
+\usepackage[unicode, draft=false, colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+% Configuración RGB para el color que se quiera emplear
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\definecolor{black}{rgb}{0.0, 0.0, 0.0}
+% Para personalizar los enlaces de teléfono, correo y sitios web
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+% \addbibresource{citations.bib}
+% \setlength\bibitemsep{1em}
+% Para los íconos que se incluyen 
+\usepackage{fontawesome5}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------
+% Inicio del documento
+%-----------------------------------------------------------------------------------------------------------------------------------------
+\begin{document}
+
+% Para que no se numeren las páginas
+\pagestyle{empty} 
+
+%-----------------------------------------------------------------------------------------------------------------------------------------
+% Título del CV
+%-----------------------------------------------------------------------------------------------------------------------------------------
+
+% Incluye nombre, ocupación, ubicación y contacto
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Angel Giovanni Gómez Rodríguez} \\[1pt] \break
+\large{Egresado de Actuaría} \\[1.5pt]
+\vspace{0.1cm}
+ \href{https://www.google.com.mx/maps/place/Chimalhuacan,+State+of+Mexico/@19.4122929,-98.9913006,13z/data=!3m1!4b1!4m5!3m4!1s0x85d1e3705c3ad799:0xe9e0ede4cbef87f7!8m2!3d19.4314047!4d-98.9582048?hl=en}{\color{Blue} \raisebox{-0.05\height}\faMapMarker \ Edomex} \ $|$ \ 
+\href{tel:5572093990}{\raisebox{-0.05\height}\faMobile \  55 72 09 39 90} \ $|$ \ 
+\href{mailto:giovanni.gomez@ciencias.unam.mx}{\raisebox{-0.05\height}\faEnvelope \ giovanni.gomez@ciencias.unam.mx} \ $|$ \ 
+\href{https://www.linkedin.com/in/giovannigomz/}{\raisebox{-0.05\height}\faLinkedin \ giovannigomz} %\ $|$ \ 
+%\href{https://github.com/GioGR05}
+%{\raisebox{-0.05\height}\faGithub\ GioGR05} 
+\end{tabularx}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------
+% Sección sobre mí
+%-----------------------------------------------------------------------------------------------------------------------------------------
+
+\section*{{\faUser} Sobre mí}
+Recién egresado de la Licenciatura en Actuaría. Apasionado por el análisis de datos, la estadística y el mundo financiero. Mi objetivo es favorecer a la resolución de problemas de manera creativa y única.
+
+Estoy en búsqueda de una plaza en la CDMX o remota en donde pueda combinar mis conocimientos con el aprendizaje de nuevos conceptos en un entorno cercano a la inteligencia de negocios.
+
+%-----------------------------------------------------------------------------------------------------------------------------------------
+% Sección de experiencia laboral
+%-----------------------------------------------------------------------------------------------------------------------------------------
+
+\section*{{\faSuitcase} Experiencia laboral}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\large Becario de planeación y regulación en materia de TI \\[1.75pt]
+\large Junio 2022 - Diciembre 2022 \ $|$ \  Banco de México \\[2.5pt]
+\multicolumn{2}{@{}X@{}}{\normalsize Apoyo a la Oficina de Presupuesto de TI y a la Oficina de Gestión Contractual de TI} 
+\end{tabularx}
+    \begin{compactitem}
+    \item [$-$] Optimización y automatización de procesos a partir de grandes bases de datos, generando información útil para el área presupuestal. 
+    \item [$-$] Realización de reportes y presentaciones ejecutivas correspondientes al análisis de estados presupuestales.
+    \item [$-$] Elaboración de tableros que muestran la calidad, eficiencia y oportunidad de los servicios al interior del Banco, así como de su infraestructura inmobiliaria y tecnológica.
+    \end{compactitem}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------
+% Sección de proyectos personales
+%-----------------------------------------------------------------------------------------------------------------------------------------
+
+\section*{{\faGithub} Proyectos personales}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Series de tiempo en RMarkdown & \href{https://github.com/GioGR05/Series-de-tiempo-en-R-}{ \normalsize{\color{black}Análisis de las acciones de Tesla de 2010 a 2020.} }
+\end{tabularx}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------
+% Sección de educación
+%-----------------------------------------------------------------------------------------------------------------------------------------
+
+\section*{{\faGraduationCap} Educación}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+\large Licenciatura en Actuaría \\[1.75pt]
+\large 2018 - 2022 \ $|$ \ Facultad de Ciencias, UNAM \\[2.5pt]
+\multicolumn{2}{@{}X@{}}{\normalsize Totalidad de créditos cubiertos, y servicio social completado, con titulación esperada en 2023.}
+%Formación académica basada en el pensamiento lógico y capacidad de %análisis de datos para resolver problemas complejos.}
+\end{tabularx}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------
+% Sección de diplomados y cursos adicionales
+%-----------------------------------------------------------------------------------------------------------------------------------------
+
+\section*{{\faCertificate} Diplomados y cursos adicionales}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+\href{https://www.linkedin.com/feed/update/urn:li:activity:7019789826958757888/}{\normalsize \color{Black}Diplomado en Educación Financiera }\\[1.75pt]
+\normalsize Junio 2021 - Agosto 2021\ $|$ \ Comisión Nacional para Protección y Defensa de los Usuarios de Servicios \\[2.5pt]
+\end{tabularx}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------
+% Sección de competencias laborales
+%-----------------------------------------------------------------------------------------------------------------------------------------
+
+\section*{{\faDesktop} Competencias laborales}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+PostgreSQL &  \normalsize{Explotación, manejo, limpieza, construcción y análisis de grandes bases de datos.}\\[2.5pt]
+Excel  &  \normalsize{Manejo de fórmulas y funciones, construcción de gráficas avanzadas y tablas dinámicas, implementación de macros en VBA y desarrollo de modelos de datos en Power Pivot.}\\  [2.5pt]
+Tableau &  \normalsize{Importación de bases de datos y desarrollo de tableros por medio de medidas, dimensiones y filtros dinámicos.}\\  [2.5pt]
+RStudio & Uso y creación de funciones, estructuración, importación, transformación y visualización de datos.\\  [2.5pt]
+RMarkdown & Extensión de RStudio para la elaboración de informes que contienen código.
+\end{tabularx}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------
+% Sección de idiomas
+%-----------------------------------------------------------------------------------------------------------------------------------------
+
+\section*{{\faLanguage} Idiomas}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Inglés &  \normalsize{B1 - Intermedio básico.}\\[1pt]
+\end{tabularx}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------
+% Actualización del CV
+%-----------------------------------------------------------------------------------------------------------------------------------------
+
+\vfill
+\center{\footnotesize Última actualización: 12 de Enero de 2023}
+
+\end{document}
